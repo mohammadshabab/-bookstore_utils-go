@@ -18,6 +18,8 @@ func TestNewInternalServerError(t *testing.T) {
 	assert.NotNil(t, err.Causes)
 	assert.EqualValues(t, 1, len(err.Causes()))
 	assert.EqualValues(t, "database error", err.Causes()[0])
+	// errBytes, _ := json.Marshal(err)
+	// fmt.Println(string(errBytes))
 }
 
 func TestNewBadRequestError(t *testing.T) {
